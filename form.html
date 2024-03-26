@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="website.css">
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+        <input type="hidden" name="access_key" value="49cbfe00-01ee-4fe3-ba7b-2bacf3cd14b5">
+        <input type="text"  name="name" required placeholder="Your Name">
+        <input type="text"  name="email" required placeholder="Your Email">
+        <input type="text" name="address" required placeholder="Your Address">
+        <input type="text" name="phone" required placeholder="Phone Number">
+        <textarea name="message" cols="10" rows="10" required placeholder="Your Messages"></textarea>
+        <div class="contact-btn">
+          <button type="submit">Send Message</button>
+          <br>
+        </div>
+        <span id="success">
+          
+        </span>
+      </form>
+
+      <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyqYC-WgQkH2tXibqrZBHRl1WXIimiSeVJxwNEJiELO0WVMz3p8cq9o1_DJiuVVX01W/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const success= document.getElementById('success');
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+              success.innerHTML="Data Successfully Submitted";
+              setTimeout(function()
+              {
+                success.innerHTML="";
+              },2000)
+              form.reset();
+
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+      
+</body>
+</html>

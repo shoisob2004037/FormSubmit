@@ -1,0 +1,40 @@
+form{
+    text-align: center;
+    max-width: 50rem;
+    margin: 1rem auto;
+    margin-bottom: 3rem;
+    
+}
+form input{
+    width:50%;
+    height: 35px;
+    margin:10px;
+    color:white;
+    background-color:darkolivegreen;
+    border-radius: 8px;
+}
+form textarea{
+    width:50%;
+    height: 60px;
+    margin:10px;
+    color:black;
+    background-color:antiquewhite;
+    border:2px solid chartreuse;
+    border-radius: 15px;
+}
+.contact-btn button{
+    width:16%;
+    height: 40px;
+    background-color:aqua;
+    border:2px solid rebeccapurple;
+    border-radius: 9px;
+    margin-bottom: 10px;
+
+}
+.contact-btn button:hover{
+    box-shadow: 0 0 30px aqua;
+    background-color: aqua;
+    border-color: aqua;
+    color:black;
+    
+}
